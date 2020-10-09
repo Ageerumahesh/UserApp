@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- From high to low OFF , FATAL , ERROR , WARN , INFO , DEBUG , TRACE , ALL -->
+<!-- Log output rules based on current ROOT Level, when log output, the level is higher than root The default level is output -->
+<!-- For each of the following configurations filter Filter out the output file, high-level file will appear, and low-level log information will still appear filter Filter logs at this level only -->
+
+
+<!-- Attribute description scan: Sex set to true If the configuration file changes, it will be reloaded. The default value is true scanPeriod:Set whether the monitoring profile has a modified time interval. If no time unit is given, the default unit is milliseconds. When scan by true This property takes effect. The default time interval is 1 minute. 
+	debug:When this property is set to true Will be printed out logback Internal log information, real-time viewing logback Operation status. The default value is false.  -->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	<contextName>d1money-web-ys-ems</contextName>
+
+	<!-- ConsoleAppender Console output log -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- Format the log -->
+		<encoder>
+			<pattern>
+				%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger -%msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="java.sql.PreparedStatement" value="DEBUG" />
+	<logger name="java.sql.Connection" value="DEBUG" />
+	<logger name="java.sql.Statement" value="DEBUG" />
+	<logger name="com.ibatis" value="DEBUG" />
+	<logger name="com.ibatis.common.jdbc.SimpleDataSource" value="DEBUG" />
+	<logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG" />
+	<logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate"
+		value="DEBUG" />
+	<logger name="com.mini.proj*" level="info" />
+
+
+
+	<!-- root level DEBUG -->
+	<root level="debug">
+		<!-- console output  -->
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>  
