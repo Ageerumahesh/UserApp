@@ -31,6 +31,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public List<Contact> getAllContacts() {
 		List<Contact> cntcts = new ArrayList<Contact>();
+		System.out.println("ci and cd puprose");
 		Iterator<ContactDtlsEntity> itrCntctDtlsEntity = null;
 		List<ContactDtlsEntity> cntctsEntity = cntctDtlsRepo.findAll();
 		itrCntctDtlsEntity = cntctsEntity.iterator();
