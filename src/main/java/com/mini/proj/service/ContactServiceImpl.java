@@ -32,7 +32,6 @@ public class ContactServiceImpl implements ContactService {
 	public List<Contact> getAllContacts() {
 		List<Contact> cntcts = new ArrayList<Contact>();
 		Iterator<ContactDtlsEntity> itrCntctDtlsEntity = null;
-		System.out.println("idfkskfl");
 		List<ContactDtlsEntity> cntctsEntity = cntctDtlsRepo.findAll();
 		itrCntctDtlsEntity = cntctsEntity.iterator();
 		while (itrCntctDtlsEntity.hasNext()) {
