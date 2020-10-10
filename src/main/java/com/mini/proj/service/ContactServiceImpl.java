@@ -23,6 +23,7 @@ public class ContactServiceImpl implements ContactService {
 	public boolean saveContact(Contact cntct) {
 		ContactDtlsEntity entityObj = null, savedEntityObj = null;
 		entityObj = new ContactDtlsEntity();
+		System.out.println("hii");
 		BeanUtils.copyProperties(cntct, entityObj);
 		savedEntityObj = cntctDtlsRepo.save(entityObj);
 		return savedEntityObj.getCid() != null;
